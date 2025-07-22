@@ -9,8 +9,8 @@
     <script>
         function sumarEdades() {
          // Obtener los valores de los inputs
-        const edad1 = parseInt(document.getElementById('edad1').value) || 0;
-        const edad2 = parseInt(document.getElementById('edad2').value) || 0;
+        const edad1 = parseFloat(document.getElementById('edad1').value) || 0;
+        const edad2 = parseFloat(document.getElementById('edad2').value) || 0;
         // Sumar las edades
         const suma = edad1 + edad2;
         // Mostrar el resultado
