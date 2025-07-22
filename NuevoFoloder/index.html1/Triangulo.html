@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Triángulo</title>
+    </head>
+    <body>
+        <h1 id="titulo">Triángulo</h1>
+        <input id="base" type="text" value=0 placeholder="longitud de la base"></input>
+        <input id="altura" type="text" value=0 placeholder="longitud de la altura"></input>
+        <input type="button" onclick="calcularArea()" value="Calcular Área"></input>
+        <input type="button" onclick="calcularPerimetro()" value="Calcular Perímetro"></input>
+
+        <script>
+    function calcularArea() {
+        let base = document.querySelector("#base").value;
+        let altura = document.querySelector("#altura").value;
+        base = parseFloat(base);
+        altura = parseFloat(altura);
+        let result = (base * altura) / 2;
+        alert(`el area es ${result}`);
+    }
+    function calcularPerimetro() {
+        let base = document.querySelector("#base").value;
+        let altura = document.querySelector("#altura").value;
+        base = parseFloat(base);
+        altura = parseFloat(altura);
+        let hipotenusa = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
+        let perimetro = base + altura + hipotenusa;
+        alert(`el perimetro es ${perimetro}`);
+    }
+        </script>
+    </body>
+</html>
