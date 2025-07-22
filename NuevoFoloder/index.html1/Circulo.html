@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Círculo</title>
+    </head>
+    <body>
+        <h1 id="titulo">Círculo</h1>
+        <input id="radio" type="text" value=0 placeholder="longitud del radio"></input>
+        <input type="button" onclick="calcularArea()" value="Calcular Área"></input>
+        <input type="button" onclick="calcularPerimetro()" value="Calcular Perímetro"></input>
+
+        <script>
+    function calcularArea() {
+        let radio = document.querySelector("#radio").value;
+        radio = parseFloat(radio);
+        let result = Math.PI * Math.pow(radio, 2);
+        alert(`el area es ${result}`);
+    }
+    function calcularPerimetro() {
+        let radio = document.querySelector("#radio").value;
+        radio = parseFloat(radio);
+        let perimetro = 2 * Math.PI * radio;
+        alert(`el perimetro es ${perimetro}`);
+    }
+        </script>
+    </body>
+</html>
