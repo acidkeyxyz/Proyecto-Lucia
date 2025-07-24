@@ -3,22 +3,35 @@
         <title>Cuadrado</title>
     </head>
     <body>
-        <h1 id="titulo">Cuadrado</h1>
-        <input id="base" type="text" value=0 placeholder="longitud de Lado"></input>
-        <input type="button" onclick="calcularTodo()" value="Calcular Área y Perímetro"></input>
+       <h1 id="title">Cuadrado</h1>
+    <input id="Lado" type="text" required placeholder="Ingresa el Lado">
+    <select id="Tipo de operacion">
+        <option value="area">Área</option>
+        <option value="perimetro">Perímetro</option>
+    </select>
+    <button onclick="calcular()">Calcular</button>
+    <h3 id="Resultado"></h3>
+    <script>
+        function calcular() {
+            const Lado = parseFloat(document.getElementById('Lado').value);
+            const operacion = document.getElementById('Tipo de operacion').value;
 
-        <script>
-            function calcularTodo() {
-                let base = parseFloat(document.querySelector("#base").value);
-
-                // Área
-                let area = Math.pow(base, 2);
-
-                // Perímetro
-                let perimetro = base * 4;
-
-                alert(`El área es ${area} y el perímetro es ${perimetro}`);
+            if (operacion === "area") {
+                if (Lado > 0) {
+                    const area = Math.pow(Lado, 2);
+                    document.getElementById('Resultado').textContent = "Área: " + area.toFixed(2);
+                } else {
+                    document.getElementById('Resultado').textContent = "Ingresa un lado mayor a 0.";
+                }
+            } else if (operacion === "perimetro") {
+                if (Lado > 0) {
+                    const perimetro = 4 * Lado;
+                    document.getElementById('Resultado').textContent = "Perímetro: " + perimetro.toFixed(2);
+                } else {
+                    document.getElementById('Resultado').textContent = "Ingresa un lado mayor a 0.";
+                }
             }
-        </script>
-    </body>
+        }
+    </script>
+</body>
 </html>
