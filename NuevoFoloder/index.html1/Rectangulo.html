@@ -6,20 +6,33 @@
         <h1 id="titulo">Rectángulo</h1>
         <input id="base" type="text" value=0 placeholder="longitud de la base"></input>
         <input id="altura" type="text" value=0 placeholder="longitud de la altura"></input>
-        <input type="button" onclick="calcularTodo()" value="Calcular Área y Perímetro"></input>
-
+        <select id="Tipo de operacion">
+            <option value="area">Área</option>
+            <option value="perimetro">Perímetro</option>
+        </select>
+        <button onclick="calcular()">Calcular</button>
+        <h3 id="Resultado"></h3>
         <script>
-            function calcularTodo() {
-                let base = parseFloat(document.querySelector("#base").value);
-                let altura = parseFloat(document.querySelector("#altura").value);
+            function calcular() {
+                const base = parseFloat(document.getElementById('base').value);
+                const altura = parseFloat(document.getElementById('altura').value);
+                const operacion = document.getElementById('operacion').value;
 
-                // Área
-                let area = base * altura;
-
-                // Perímetro
-                let perimetro = 2 * (base + altura);
-
-                alert(`El área es ${area} y el perímetro es ${perimetro}`);
+                if (operacion === "area") {
+                    if (base > 0 && altura > 0) {
+                        const area = base * altura;
+                        document.getElementById('Resultado').textContent = "Área: " + area.toFixed(2);
+                    } else {
+                        document.getElementById('Resultado').textContent = "Ingresa ambos lados mayores a 0.";
+                    }
+                } else if (operacion === "perimetro") {
+                    if (base > 0 && altura > 0) {
+                        const perimetro = 2 * (base + altura);
+                        document.getElementById('Resultado').textContent = "Perímetro: " + perimetro.toFixed(2);
+                    } else {
+                        document.getElementById('Resultado').textContent = "Ingresa ambos lados mayores a 0.";
+                    }
+                }
             }
         </script>
     </body>
