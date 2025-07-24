@@ -1,83 +1,25 @@
-<html>  
-    <head>
-        <title>Trata De Personass</title>
-        <style>
-          h1.Soledad { color:red; }
-          h2 {
-            color: brown;
-
-          }
-          
-            h1 { color:crimson; }
-          @media (max-width: 600px) {
-            body {
-              background-color: burlywood;
-            }            
-          }
-
-        </style>
-    </head> 
-    <body>
-        <h1 class="Soledad">Trata De Personas</h1>
-    </body>
-    <section class="hero">
-  <div class="hero-content">
-    <h1>Detén la Trata de Personas</h1>
-    <p>Cada segundo cuenta. Ayuda a salvar vidas informándote y actuando.</p>
-    <a href="#contacto" class="boton-accion">Actúa Ahora</a>
-  </div>
-  <img src="Trata de personas imagen.jpeg" width="300">
-</section>
-    <section id="spa">
-  <h2>¿Qué es la Trata de Personas?</h2>
-  <p>
-    La trata de personas es un delito que implica el reclutamiento, transporte o retención de personas con fines de explotación. 
-    Afecta a millones de personas en el mundo, especialmente mujeres y niños.
-  </p>
-  <p>
-    Puede presentarse en formas como explotación sexual, trabajo forzado, servidumbre doméstica, y más. Es una violación grave de los derechos humanos.
-  </p>
-</section>
-    <section id="productos">
-  <h2>Productos Educativos</h2>
-  <ul class="productos-lista">
-    <li>
-      <h3>Guía de Prevención</h3>
-      <p>Manual gratuito para reconocer señales de trata de personas.</p>
-    </li>
-    <li>
-      <h3>Curso Online</h3>
-      <p>Capacitación virtual para educadores y profesionales.</p>
-    </li>
-  </ul>
-</section>
-    <section id="servicios">
-  <h2>Nuestros Servicios</h2>
-  <ul>
-    <li><strong>Talleres Escolares:</strong> Charlas preventivas para jóvenes.</li>
-    <li><strong>Asesoría Jurídica:</strong> Orientación legal para víctimas.</li>
-    <li><strong>Campañas de Concienciación:</strong> Activaciones en comunidades.</li>
-  </ul>
-</section>
-    <section id="contacto">
-  <h2>Contacto</h2>
-  <form action="enviar.php" method="post">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required>
-
-    <label for="correo">Correo:</label>
-    <input type="email" id="correo" name="correo" required>
-
-    <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje" required></textarea>
-
-    <button type="submit">Enviar</button>
-  </form>
-</section>
-
-    <a href="#contacto" class="boton-accion">Denuncia o Involúcrate</a>
-    
-
+<html>
+<body>
+    <h1>Hello, World!</h1>
+        <input id="edad1" type="text" value="" required placeholder="ingresa tu edad 1">
+        <input id="edad2" type="text" value="" required placeholder="ingresa tu edad 2">
+        <button onclick="sumarEdades()">Enviar</button>
+        <p id="resultado"></p>
+</body>
+    <script>
+        function sumarEdades() {
+         // Obtener los valores de los inputs
+        const edad1 = parseFloat(document.getElementById('edad1').value) || 0;
+        const edad2 = parseFloat(document.getElementById('edad2').value) || 0;
+        // Sumar las edades
+        const suma = edad1 + edad2;
+        // Mostrar el resultado
+        document.getElementById('resultado').textContent = "La suma de las edades es: " + suma;
+        /*
+        comentario de multiples líneas
+        aca otro comentario de multiples línea
+         */
+        // comentario de una sola línea
+    }
+    </script>
 </html>
-
-
