@@ -5,21 +5,20 @@
     <body>
         <h1 id="titulo">Cuadrado</h1>
         <input id="base" type="text" value=0 placeholder="longitud de Lado"></input>
-        <input type="button" onclick="calcularArea()" value="Calcular Área"></input>
-        <input type="button" onclick="calcularPerimetro()" value="Calcular Perímetro"></input>
+        <input type="button" onclick="calcularTodo()" value="Calcular Área y Perímetro"></input>
 
         <script>
-    function calcularArea() {
-        let base = document.querySelector("#base").value;
-        base = parseFloat(base);
-        let result = Math.pow(base, 2); //base al cuadrado
-        alert(`el area es ${result}`);
-    }
-    function calcularPerimetro() {
-        let base = document.querySelector("#base").value;
-        let perimetro = base * 4; //perimetro es 4 veces la base
-        alert(`el perimetro es ${perimetro}`);
-    }
+            function calcularTodo() {
+                let base = parseFloat(document.querySelector("#base").value);
+
+                // Área
+                let area = Math.pow(base, 2);
+
+                // Perímetro
+                let perimetro = base * 4;
+
+                alert(`El área es ${area} y el perímetro es ${perimetro}`);
+            }
         </script>
     </body>
 </html>

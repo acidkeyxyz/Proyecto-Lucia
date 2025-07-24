@@ -5,22 +5,15 @@
     <body>
         <h1 id="titulo">Círculo</h1>
         <input id="radio" type="text" value=0 placeholder="longitud del radio"></input>
-        <input type="button" onclick="calcularArea()" value="Calcular Área"></input>
-        <input type="button" onclick="calcularPerimetro()" value="Calcular Perímetro"></input>
-
+        <input type="button" onclick="calcularTodo()" value="Calcular Área, Perímetro y Radio"></input>
         <script>
-    function calcularArea() {
-        let radio = document.querySelector("#radio").value;
-        radio = parseFloat(radio);
-        let result = Math.PI * Math.pow(radio, 2);
-        alert(`el area es ${result}`);
-    }
-    function calcularPerimetro() {
-        let radio = document.querySelector("#radio").value;
-        radio = parseFloat(radio);
-        let perimetro = 2 * Math.PI * radio;
-        alert(`el perimetro es ${perimetro}`);
-    }
+            function calcularTodo() {
+                let radio = parseFloat(document.querySelector("#radio").value)
+                let area = Math.PI * Math.pow(radio, 2);
+                let perimetro = 2 * Math.PI * radio;
+
+                alert(`El área es ${area.toFixed(2)}, el perímetro es ${perimetro.toFixed(2)} y el radio es ${radio.toFixed(2)}`);
+            }
         </script>
     </body>
 </html>
