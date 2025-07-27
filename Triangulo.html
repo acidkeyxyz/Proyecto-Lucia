@@ -4,36 +4,28 @@
     </head>
     <body>
         <h1 id="titulo">Triángulo</h1>
-        <input id="base" type="text" value=0 placeholder="longitud de la base"></input>
-        <input id="altura" type="text" value=0 placeholder="longitud de la altura"></input>
-        <select id="Tipo de operacion">
-            <option value="area">Área</option>
-            <option value="perimetro">Perímetro</option>
-        </select>
-        <button onclick="calcular()">Calcular</button>
-        <h3 id="Resultado"></h3>
         <script>
-            function calcular() {
-                const base = parseFloat(document.getElementById('base').value);
-                const altura = parseFloat(document.getElementById('altura').value);
-                const operacion = document.getElementById('operacion').value;
-
-                if (operacion === "area") {
-                    if (base > 0 && altura > 0) {
-                        const area = (base * altura) / 2;
-                        document.getElementById('Resultado').textContent = "Área: " + area.toFixed(2);
-                    } else {
-                        document.getElementById('Resultado').textContent = "Ingresa ambos lados mayores a 0.";
-                    }
-                } else if (operacion === "perimetro") {
-                    if (base > 0 && altura > 0) {
-                        const lado1 = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
-                        const perimetro = base + altura + lado1;
-                        document.getElementById('Resultado').textContent = "Perímetro: " + perimetro.toFixed(2);
-                    } else {
-                        document.getElementById('Resultado').textContent = "Ingresa ambos lados mayores a 0.";
-                    }
-                }
+            function calcularArea(base, altura) {
+                return (base * altura) / 2;
+            }
+            function calcularPerimetro(base, altura) {
+                const lado1 = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
+                return base + altura + lado1;
+            }
+            let results = [];
+            for (let i = 1; i <= 10; i++) {
+                results[i] = `Área del triángulo base=${3} altura=${i} área=${calcularArea(3, i)} m²`;
+                document.querySelector("body").innerHTML += results[i];
+                document.querySelector("body").innerHTML += "<br/>";
+            }
+            document.querySelector("body").innerHTML += "<br/>";
+            
+            let k = 1;
+            while (k <= 10) {
+                results[k] = `Perímetro del triángulo base=${3} altura=${k} perímetro=${calcularPerimetro(3, k)} m`;
+                document.querySelector("body").innerHTML += results[k];
+                document.querySelector("body").innerHTML += "<br/>";
+                k++;    
             }
         </script>
     </body>
