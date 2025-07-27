@@ -4,33 +4,29 @@
     </head>
     <body>
        <h1 id="title">Cuadrado</h1>
-    <input id="Lado" type="text" required placeholder="Ingresa el Lado">
-    <select id="Tipo de operacion">
-        <option value="area">Área</option>
-        <option value="perimetro">Perímetro</option>
-    </select>
-    <button onclick="calcular()">Calcular</button>
-    <h3 id="Resultado"></h3>
-    <script>
-        function calcular() {
-            const Lado = parseFloat(document.getElementById('Lado').value);
-            const operacion = document.getElementById('Tipo de operacion').value;
 
-            if (operacion === "area") {
-                if (Lado > 0) {
-                    const area = Math.pow(Lado, 2);
-                    document.getElementById('Resultado').textContent = "Área: " + area.toFixed(2);
-                } else {
-                    document.getElementById('Resultado').textContent = "Ingresa un lado mayor a 0.";
-                }
-            } else if (operacion === "perimetro") {
-                if (Lado > 0) {
-                    const perimetro = 4 * Lado;
-                    document.getElementById('Resultado').textContent = "Perímetro: " + perimetro.toFixed(2);
-                } else {
-                    document.getElementById('Resultado').textContent = "Ingresa un lado mayor a 0.";
-                }
-            }
+    <script>
+        function calcularArea(lado) {
+            return lado * lado;
+        }
+
+        function calcularPerimetro(lado) {
+            return 4 * lado;
+        }
+        let results = [];
+        for (let i = 1; i <= 10; i++) {
+            results[i] = `Área del cuadrado lado=${i} área=${calcularArea(i)} m²`;
+            document.querySelector("body").innerHTML += results[i];
+            document.querySelector("body").innerHTML += "<br/>";
+        }
+        document.querySelector("body").innerHTML += "<br/>";
+
+        let k = 1;
+        while (k <= 10) {
+            results[k] = `Perímetro del cuadrado lado=${k} perímetro=${calcularPerimetro(k)} m`;
+            document.querySelector("body").innerHTML += results[k];
+            document.querySelector("body").innerHTML += "<br/>";
+            k++;
         }
     </script>
 </body>
