@@ -4,33 +4,26 @@
     </head>
     <body>
         <h1 id="titulo">Círculo</h1>
-        <input id="radio" type="text" value=0 placeholder="longitud del radio"></input>
-        <select id="Tipo de operacion">
-            <option value="area">Área</option>
-            <option value="perimetro">Perímetro</option>
-        </select>
-        <button onclick="calcular()">Calcular</button>
-        <h3 id="Resultado"></h3>
         <script>
-            function calcular() {
-                const r = parseFloat(document.getElementById('radio').value);
-                const operacion = document.getElementById('operacion').value;
-
-                if (operacion === "area") {
-                    if (r > 0) {
-                        const area = Math.PI * Math.pow(r, 2);
-                        document.getElementById('Resultado').textContent = "Área: " + area.toFixed(2);
-                    } else {
-                        document.getElementById('Resultado').textContent = "Ingresa un radio mayor a 0.";
-                    }
-                } else if (operacion === "perimetro") {
-                    if (r > 0) {
-                        const perimetro = 2 * Math.PI * r;
-                        document.getElementById('Resultado').textContent = "Perímetro: " + perimetro.toFixed(2);
-                    } else {
-                        document.getElementById('Resultado').textContent = "Ingresa un radio mayor a 0.";
-                    }
-                }
+            function calcularArea(radio) {
+                return Math.PI * Math.pow(radio, 2);
+            }
+            function calcularPerimetro(radio) {
+                return 2 * Math.PI * radio;
+            }
+            let results = [];
+            for (let i = 1; i <= 10; i++) {
+                results[i] = `Área del círculo radio=${i} área=${calcularArea(i)} m²`;
+                document.querySelector("body").innerHTML += results[i];
+                document.querySelector("body").innerHTML += "<br/>";
+            }
+            document.querySelector("body").innerHTML += "<br/>";
+            let k = 1;
+            while (k <= 10) {
+                results[k] = `Perímetro del círculo radio=${k} perímetro=${calcularPerimetro(k)} m`;
+                document.querySelector("body").innerHTML += results[k];
+                document.querySelector("body").innerHTML += "<br/>";
+                k++;
             }
         </script>
     </body>
