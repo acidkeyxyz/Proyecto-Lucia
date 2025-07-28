@@ -17,9 +17,14 @@
                 this.#area = this.#lado * this.#lado;
                 return this.#area;
             }
+            calcularPerimetro() {
+                this.#perimetro = 4 * this.#lado;
+                return this.#perimetro;
+            }
         }
         const cuadrado = new Cuadrado(4);
         const area = cuadrado.calcularArea();
+        const perimetro = cuadrado.calcularPerimetro();
     </script>
 </body>
 </html>
