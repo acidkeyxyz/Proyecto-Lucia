@@ -19,9 +19,15 @@
                     this.#area = (this.#base * this.#altura) / 2;
                     return this.#area;
                 }
+                calcularPerimetro() {
+                    // Implementación del cálculo del perímetro
+                    this.#perimetro = this.#base * 3; // Asumiendo un triángulo equilátero
+                    return this.#perimetro;
+                }
             }
             const triangulo = new Triangulo(3, 4);
             const area = triangulo.calcularArea();
+            const perimetro = triangulo.calcularPerimetro();
         </script>
     </body>
 </html>
