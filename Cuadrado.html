@@ -6,28 +6,21 @@
        <h1 id="title">Cuadrado</h1>
 
     <script>
-        function calcularArea(lado) {
-            return lado * lado;
+        console.log("hola");
+        class Cuadrado {
+            #perimetro = 0;
+            #area = 0;
+            #lado = 0;
+            constructor(lado) {
+                this.#lado = lado;
+            }
+            calcularArea() {
+                this.#area = this.#lado * this.#lado;
+                return this.#area;
+            }
         }
-
-        function calcularPerimetro(lado) {
-            return 4 * lado;
-        }
-        let results = [];
-        for (let i = 1; i <= 10; i++) {
-            results[i] = `Área del cuadrado lado=${i} área=${calcularArea(i)} m²`;
-            document.querySelector("body").innerHTML += results[i];
-            document.querySelector("body").innerHTML += "<br/>";
-        }
-        document.querySelector("body").innerHTML += "<br/>";
-
-        let k = 1;
-        while (k <= 10) {
-            results[k] = `Perímetro del cuadrado lado=${k} perímetro=${calcularPerimetro(k)} m`;
-            document.querySelector("body").innerHTML += results[k];
-            document.querySelector("body").innerHTML += "<br/>";
-            k++;
-        }
+        const cuadrado = new Cuadrado(4);
+        const area = cuadrado.calcularArea();
     </script>
 </body>
 </html>

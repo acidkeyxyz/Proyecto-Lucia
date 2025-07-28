@@ -1,12 +1,8 @@
 <html>
-    <head>
-        <title>Triángulo</title>
-    </head>
     <body>
-        <h1 id="titulo">Triángulo</h1>
         <script>
-           console.log("hola");
-            class Triangulo {
+            console.log(Ejemplo)
+            class Rectángulo {
                 #perimetro = 0;
                 #area = 0;
                 #base = 0;
@@ -16,12 +12,12 @@
                     this.#altura = altura;
                 }
                 calcularArea() {
-                    this.#area = (this.#base * this.#altura) / 2;
+                    this.#area = this.#base * this.#altura;
                     return this.#area;
                 }
             }
-            const triangulo = new Triangulo(3, 4);
-            const area = triangulo.calcularArea();
+            const rectangulo = new Rectángulo(3, 4);
+            const area = rectangulo.calcularArea();
         </script>
     </body>
 </html>

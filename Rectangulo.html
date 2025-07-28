@@ -5,27 +5,23 @@
     <body>
         <h1 id="titulo">Rectángulo</h1>
         <script>
-    function calcularArea(base, altura) {
-        return base * altura;
-    }
-    function calculaPerimetro(base, altura) {
-        return 2 * base + 2 * altura;
-    }
-    let results = [];
-    for (let i = 1; i <= 10; i++) {
-        results[i] = `área del rectángulo base=${3} altura=${i} área=${calcularArea(3, i)} m²`;
-        document.querySelector("body").innerHTML += results[i];
-        document.querySelector("body").innerHTML += "<br/>";
-    }
-    document.querySelector("body").innerHTML += "<br/>";
-
-    let k = 0;
-    while (k <= 10) {
-        results[k] = `perimetro del rectangulo base=${3} altura=${k} perimetro=${calculaPerimetro(3, k)} m`;
-        document.querySelector("body").innerHTML += results[k];
-        document.querySelector("body").innerHTML += "<br/>";
-        k += 1;
-    }
+        console.log("hola");
+		    class Rectangulo {
+			    #perimetro = 0;
+			    #area = 0;
+			    #base = 0;
+			    #altura = 0;
+			    constructor(base, altura) {
+				    this.#base = base;
+				    this.#altura = altura;
+			    }
+			    calcularArea() {
+				    this.#area = this.#base * this.#altura;
+				    return this.#area;
+			    }
+		    }
+		    const rectangulo = new Rectangulo(3, 4);
+		    const area = rectangulo.calcularArea();
         </script>
     </body>
 </html>

@@ -5,26 +5,21 @@
     <body>
         <h1 id="titulo">Círculo</h1>
         <script>
-            function calcularArea(radio) {
-                return Math.PI * Math.pow(radio, 2);
+            console.log("hola");
+            class Circulo {
+                #perimetro = 0;
+                #area = 0;
+                #radio = 0;
+                constructor(radio) {
+                    this.#radio = radio;
+                }
+                calcularArea() {
+                    this.#area = Math.PI * this.#radio * this.#radio;
+                    return this.#area;
+                }
             }
-            function calcularPerimetro(radio) {
-                return 2 * Math.PI * radio;
-            }
-            let results = [];
-            for (let i = 1; i <= 10; i++) {
-                results[i] = `Área del círculo radio=${i} área=${calcularArea(i)} m²`;
-                document.querySelector("body").innerHTML += results[i];
-                document.querySelector("body").innerHTML += "<br/>";
-            }
-            document.querySelector("body").innerHTML += "<br/>";
-            let k = 1;
-            while (k <= 10) {
-                results[k] = `Perímetro del círculo radio=${k} perímetro=${calcularPerimetro(k)} m`;
-                document.querySelector("body").innerHTML += results[k];
-                document.querySelector("body").innerHTML += "<br/>";
-                k++;
-            }
+            const circulo = new Circulo(5);
+            const area = circulo.calcularArea();
         </script>
     </body>
 </html>
