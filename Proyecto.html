@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
     <head>
+        <meta charset="UTF-8">
         <title>Proyecto Selena Quintanilla</title>
         <link rel="stylesheet" href="ProyectoEstilo.css">
     </head>
@@ -8,12 +10,59 @@
             <div class="Menú"></div>
         <nav>
             <ul>
-                <li><a href="#">Biografía</a></li>
-                <li><a href="#">Canciones</a></li>
-                <li><a href="#">Vestuarios</a></li>
-                <li><a href="#">Referencias</a></li>
+            <li><a href="#inicio" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+            <li><a href="#biografia" onclick="mostrarSeccion('biografia')">Biografía</a></li>
+            <li><a href="#canciones" onclick="mostrarSeccion('canciones')">Canciones</a></li>
+            <li><a href="#vestuarios" onclick="mostrarSeccion('vestuarios')">Vestuarios</a></li>
+            <li><a href="#referencias" onclick="mostrarSeccion('referencias')">Referencias</a></li>
             </ul>
         </nav>
-        </header>
-    </body>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h1>Proyecto sobre Selena Quintanilla</h1>
+            <p>Bienvenido al proyecto dedicado a la vida y legado de Selena Quintanilla, la Reina del Tex-Mex.</p>
+        </section>
+
+        <section id="biografia">
+            <h2>Biografía</h2>
+            <p>Aquí puedes escribir la historia de Selena Quintanilla...</p>
+        </section>
+
+        <section id="canciones">
+            <h2>Canciones</h2>
+            <p>En la siguiente lista te mostramos todas las canciones de Selena, desde sus exitos musicales hasta las menos conocidas.</p>
+                <h3>Canciones en Inglés</h3>
+                <p>A Boy Like That</p>
+                <p>A Million To One</p>
+                <p>Always Mine</p>
+        </section>
+
+        <section id="vestuarios">
+            <h2>Vestuarios</h2>
+            <p>A lo largo de la carrera de Selena, sus vestuarios se convirtieron en una parte icónica de su imagen, desde trajes tradicionales hasta atuendos más modernos.</p>
+        </section>
+
+        <section id="referencias">
+            <h2>Referencias</h2>
+            <p>Libros, artículos y enlaces relacionados con su vida...</p>
+        </section>
+    </main>
+
+    <script>
+        function mostrarSeccion(id) {
+            const secciones = document.querySelectorAll('main section');
+            secciones.forEach(seccion => {
+                seccion.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+
+        // Mostrar la primera sección al cargar
+        document.addEventListener('DOMContentLoaded', function () {
+            mostrarSeccion('inicio');
+        });
+    </script>
+</body>
 </html>
