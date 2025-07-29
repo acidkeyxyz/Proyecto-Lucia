@@ -28,6 +28,8 @@
             const triangulo = new Triangulo(3, 4);
             const area = triangulo.calcularArea();
             const perimetro = triangulo.calcularPerimetro();
+            document.querySelector('body').innerHTML += `<p>Área: ${area}</p>`;
+            document.querySelector('body').innerHTML += `<p>Perímetro: ${perimetro}</p>`;
         </script>
     </body>
 </html>
